@@ -1,0 +1,39 @@
+headers = []
+redirects = []
+
+[dev]
+command = "npm run dev"
+port = 3000
+targetPort = 3000
+
+[functions]
+
+  [functions."*"]
+
+[[plugins]]
+origin = "config"
+package = "@netlify/plugin-nextjs"
+
+  [plugins.inputs]
+
+[build]
+publish = "C:\\Users\\Necul\\aurea-shop\\.next"
+publishOrigin = "config"
+command = "npm run build"
+commandOrigin = "config"
+
+  [build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--legacy-peer-deps"
+
+  [build.processing]
+
+    [build.processing.css]
+
+    [build.processing.html]
+
+    [build.processing.images]
+
+    [build.processing.js]
+
+  [build.services]
