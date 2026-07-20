@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>16 Santiago Store — Streetwear &amp; Completi Estivi</title>
+  <meta name="description" content="16 Santiago Store: completi streetwear, t-shirt oversize e outfit estivi. Spedizione in tutta Italia, pagamento con PayPal, bonifico o contrassegno." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>🧥</text></svg>" />
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="16 Santiago Store">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+          <path d="M32 6c-3.5 0-6 2.4-6 5.4 0 2.2 1.4 3.8 3.4 4.6 1.4.6 2.6 1.5 2.6 3v2" />
+          <path d="M32 21 8 36c-1.8 1.1-1 3.9 1.1 3.9h45.8c2.1 0 2.9-2.8 1.1-3.9L32 21Z" />
+        </svg>
+        <span class="brand__text">
+          <span class="brand__num">16</span>
+          <span class="brand__sub">Santiago Store</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html#shop">Shop</a>
+        <a href="index.html#chi-siamo">Chi siamo</a>
+        <a href="index.html#pagamenti">Pagamenti</a>
+        <a href="index.html#contatti">Contatti</a>
+      </nav>
+
+      <div style="display:flex;align-items:center;gap:.7rem;">
+        <button class="cart-btn" type="button" data-open-cart>
+          🛒 Carrello <span data-cart-count>0</span>
+        </button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div>
+        <p class="hero__kicker">Streetwear · Estate 2026</p>
+        <h1>Il tuo stile,<br /><span class="brush">senza sforzo.</span></h1>
+        <p>
+          Completi coordinati, t-shirt oversize e outfit pensati per chi vuole
+          essere a posto in due minuti. Qualità vera, prezzi onesti, spedizione
+          in tutta Italia.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--gold" href="#shop">Scopri la collezione</a>
+          <a class="btn btn--ghost" href="#chi-siamo">Chi siamo</a>
+        </div>
+      </div>
+      <div class="hero__imgwrap">
+        <img src="assets/img/set-sand.jpeg" alt="Completo oversize color sabbia" />
+      </div>
+    </div>
+    <div class="container hero__perks">
+      <span>Spedizione gratis sopra i 60&nbsp;€</span>
+      <span>Reso facile entro 14 giorni</span>
+      <span>Pagamento anche alla consegna</span>
+    </div>
+  </section>
+
+  <!-- ================= SHOP ================= -->
+  <section class="section" id="shop">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__kicker">La collezione</p>
+        <h2>I nostri completi</h2>
+      </div>
+      <div class="grid" id="product-grid"><!-- prodotti generati da JS --></div>
+    </div>
+  </section>
+
+  <!-- ================= CHI SIAMO ================= -->
+  <section class="section" id="chi-siamo" style="background:#fff;">
+    <div class="container about">
+      <div class="about__imgwrap">
+        <img src="assets/img/store-card.jpeg" alt="Il biglietto da visita di 16 Santiago Store nel nostro negozio" />
+      </div>
+      <div>
+        <p class="section__kicker">Chi siamo</p>
+        <h2>Nati in negozio,<br />cresciuti online.</h2>
+        <p>
+          16 Santiago Store nasce come negozio fisico di abbigliamento street e
+          casual. Ogni capo che vedi qui è lo stesso che trovi appeso alle
+          nostre grucce: lo scegliamo, lo tocchiamo e lo proviamo prima di
+          proportelo.
+        </p>
+        <p>
+          Ora portiamo la stessa selezione direttamente a casa tua, con
+          spedizioni rapide in tutta Italia e la possibilità di pagare come
+          preferisci — anche alla consegna.
+        </p>
+        <a class="btn btn--dark" href="#shop">Vai allo shop</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PAGAMENTI ================= -->
+  <section class="payments-strip" id="pagamenti">
+    <div class="container">
+      <span><span class="ico">💳</span> PayPal</span>
+      <span><span class="ico">🏦</span> Bonifico bancario</span>
+      <span><span class="ico">📦</span> Contrassegno alla consegna</span>
+      <span><span class="ico">💬</span> Ordine assistito su WhatsApp</span>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer" id="contatti">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div>
+          <h4>16 Santiago Store</h4>
+          <p>Streetwear e completi coordinati.<br />Spediamo in tutta Italia.</p>
+        </div>
+        <div>
+          <h4>Link utili</h4>
+          <ul>
+            <li><a href="index.html#shop">Shop</a></li>
+            <li><a href="index.html#chi-siamo">Chi siamo</a></li>
+            <li><a href="checkout.html">Carrello e checkout</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contatti</h4>
+          <ul>
+            <li>📧 ordini@16santiagostore.it</li>
+            <li>💬 WhatsApp: scrivici dal checkout</li>
+            <li>📍 Italia</li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        © <span data-year></span> 16 Santiago Store — Tutti i diritti riservati
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL PRODOTTO ================= -->
+  <div class="modal" id="product-modal" role="dialog" aria-modal="true">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__panel">
+      <button class="modal__close" type="button" data-close-modal aria-label="Chiudi">✕</button>
+      <img id="pm-img" src="" alt="" />
+      <div class="modal__info">
+        <span class="card__cat" id="pm-cat"></span>
+        <h3 id="pm-name" style="font-size:1.5rem;"></h3>
+        <div class="card__price" id="pm-price" style="font-size:1.1rem;"></div>
+        <p id="pm-desc" style="color:var(--ink-soft);font-size:.95rem;"></p>
+        <div>
+          <strong style="font-size:.9rem;">Taglia</strong>
+          <div class="sizes" id="pm-sizes" style="margin-top:.4rem;"></div>
+        </div>
+        <div>
+          <strong style="font-size:.9rem;">Quantità</strong>
+          <div class="qty-ctrl" style="margin-top:.4rem;">
+            <button type="button" id="pm-minus" aria-label="Diminuisci">−</button>
+            <span id="pm-qty">1</span>
+            <button type="button" id="pm-plus" aria-label="Aumenta">+</button>
+          </div>
+        </div>
+        <p class="form-error" id="pm-error" hidden>Seleziona una taglia prima di aggiungere al carrello.</p>
+        <button class="btn btn--gold btn--block" type="button" id="pm-add">Aggiungi al carrello</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= DRAWER CARRELLO ================= -->
+  <div class="drawer" id="cart-drawer">
+    <div class="drawer__backdrop" data-close-cart></div>
+    <aside class="drawer__panel" aria-label="Carrello">
+      <div class="drawer__head">
+        <h3>Il tuo carrello</h3>
+        <button class="drawer__close" type="button" data-close-cart aria-label="Chiudi">✕</button>
+      </div>
+      <div class="drawer__items" id="cart-items"></div>
+      <div class="drawer__foot">
+        <div class="totrow"><span>Subtotale</span><span id="cart-subtotal">€ 0,00</span></div>
+        <div class="totrow"><span>Spedizione</span><span id="cart-shipping">—</span></div>
+        <div class="totrow totrow--big"><span>Totale</span><span id="cart-total">€ 0,00</span></div>
+        <p class="free-ship-note">Spedizione gratuita per ordini sopra i 60&nbsp;€</p>
+        <a class="btn btn--gold btn--block" href="checkout.html" id="cart-checkout-btn">Vai al checkout</a>
+      </div>
+    </aside>
+  </div>
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/store.js"></script>
+</body>
+</html>
