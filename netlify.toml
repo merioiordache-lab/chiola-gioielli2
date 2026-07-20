@@ -1,4 +1,7 @@
 # 16 Santiago Store — sito statico, nessuna build necessaria
 [build]
 publish = "."
-command = ""
+command = "echo 'Sito statico: nessuna build necessaria'"
+
+[build.environment]
+NODE_VERSION = "20"
