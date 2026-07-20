@@ -106,24 +106,30 @@ function removeItem(index) {
 }
 
 // ---------------- Catalogo (index) ----------------
+function discountPct(p) {
+  return p.oldPrice ? Math.round((1 - p.price / p.oldPrice) * 100) : 0;
+}
+
 function renderProducts() {
   const grid = document.getElementById("product-grid");
   if (!grid) return;
   grid.innerHTML = PRODUCTS.map(
     (p) => `
-    <article class="card" data-open-product="${p.id}">
+    <article class="card reveal" data-open-product="${p.id}">
       <div class="card__imgwrap">
         ${p.badge ? `<span class="card__badge">${p.badge}</span>` : ""}
+        ${discountPct(p) ? `<span class="card__off">−${discountPct(p)}%</span>` : ""}
         <img src="${p.img}" alt="${p.name}" loading="lazy" />
       </div>
       <div class="card__body">
         <span class="card__cat">${p.category}</span>
         <h3 class="card__title">${p.name}</h3>
+        <span class="card__sizes">Taglie: ${p.sizes.join(" · ")}</span>
         <div class="card__price">
           ${p.oldPrice ? `<s>${fmt(p.oldPrice)}</s>` : ""}
           <strong>${fmt(p.price)}</strong>
         </div>
-        <button class="btn btn--dark card__btn" type="button">Scegli taglia</button>
+        <button class="btn btn--gold card__btn" type="button">Acquista</button>
       </div>
     </article>`
   ).join("");
@@ -251,6 +257,21 @@ function renderCartDrawer() {
     subtotal === 0 ? "—" : ship === 0 ? "Gratis" : fmt(ship);
   document.getElementById("cart-total").textContent = fmt(subtotal + ship);
   document.getElementById("cart-checkout-btn").toggleAttribute("disabled", cart.length === 0);
+
+  // Barra progresso verso la spedizione gratuita
+  const bar = document.getElementById("ship-progress-bar");
+  const note = document.getElementById("ship-note");
+  if (bar && note) {
+    const pct = Math.min(100, (subtotal / STORE_CONFIG.freeShippingOver) * 100);
+    bar.style.width = pct + "%";
+    const missing = STORE_CONFIG.freeShippingOver - subtotal;
+    note.textContent =
+      subtotal > 0 && missing > 0
+        ? `Ti mancano ${fmt(missing)} per la spedizione gratuita`
+        : subtotal > 0
+        ? "🎉 Hai la spedizione gratuita!"
+        : `Spedizione gratuita per ordini sopra i ${fmt(STORE_CONFIG.freeShippingOver)}`;
+  }
 
   list.querySelectorAll("[data-qty-minus]").forEach((b) =>
     b.addEventListener("click", () => changeQty(+b.dataset.qtyMinus, -1))
@@ -412,6 +433,33 @@ document.addEventListener("DOMContentLoaded", () => {
     burger.addEventListener("click", () =>
       document.getElementById("site-nav").classList.toggle("is-open")
     );
+  }
+
+  // Pulsante contatto WhatsApp
+  const waContact = document.getElementById("wa-contact");
+  if (waContact) {
+    waContact.href = `https://wa.me/${STORE_CONFIG.whatsappNumber}?text=${encodeURIComponent(
+      "Ciao! Ho una domanda su un capo di 16 Santiago Store."
+    )}`;
+  }
+
+  // Animazioni reveal allo scroll
+  const revealEls = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && revealEls.length) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-in");
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    revealEls.forEach((el) => io.observe(el));
+  } else {
+    revealEls.forEach((el) => el.classList.add("is-in"));
   }
 
   // Anno footer

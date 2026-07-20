@@ -7,11 +7,13 @@
   <meta name="description" content="Completa il tuo ordine su 16 Santiago Store: PayPal, bonifico bancario o contrassegno alla consegna." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>🧥</text></svg>" />
 </head>
 <body>
+
+  <div class="announce">Spedizione gratuita sopra i <strong>60&nbsp;€</strong> · Reso facile entro 14 giorni · Paga anche alla consegna</div>
 
   <header class="site-header">
     <div class="container site-header__inner">
@@ -44,9 +46,17 @@
 
       <!-- ============ CHECKOUT ============ -->
       <div id="checkout-main">
-        <div class="section__head" style="margin-bottom:2rem;">
+        <div class="section__head" style="margin-bottom:0.5rem;">
           <p class="section__kicker">Checkout</p>
           <h2>Completa il tuo ordine</h2>
+        </div>
+
+        <div class="steps" aria-label="Passaggi del checkout">
+          <span class="step is-on"><span class="dot">1</span> Carrello</span>
+          <span class="sep">─</span>
+          <span class="step is-on"><span class="dot">2</span> Dati e pagamento</span>
+          <span class="sep">─</span>
+          <span class="step"><span class="dot">3</span> Conferma</span>
         </div>
 
         <form id="checkout-form" class="checkout-grid" novalidate>
@@ -128,7 +138,7 @@
           </div>
 
           <!-- Riepilogo -->
-          <div class="panel">
+          <div class="panel panel--sticky">
             <h2>Riepilogo ordine</h2>
             <div id="checkout-items" style="display:flex;flex-direction:column;gap:1rem;margin-bottom:1.2rem;"></div>
             <div class="totrow"><span>Subtotale</span><span id="co-subtotal">€ 0,00</span></div>
@@ -143,6 +153,7 @@
               negozio: è la conferma definitiva dell'ordine. Riceverai risposta
               con i tempi di spedizione.
             </p>
+            <p class="secure-note">🔒 Dati protetti · Reso facile entro 14 giorni</p>
           </div>
         </form>
       </div>

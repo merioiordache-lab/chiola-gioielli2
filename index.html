@@ -4,14 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>16 Santiago Store — Streetwear &amp; Completi Estivi</title>
-  <meta name="description" content="16 Santiago Store: completi streetwear, t-shirt oversize e outfit estivi. Spedizione in tutta Italia, pagamento con PayPal, bonifico o contrassegno." />
+  <meta name="description" content="16 Santiago Store: completi streetwear, t-shirt oversize e outfit estivi selezionati a mano. Spedizione in tutta Italia, reso 14 giorni, pagamento anche alla consegna." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>🧥</text></svg>" />
 </head>
 <body>
+
+  <div class="announce">Spedizione gratuita sopra i <strong>60&nbsp;€</strong> · Reso facile entro 14 giorni · Paga anche alla consegna</div>
 
   <!-- ================= HEADER ================= -->
   <header class="site-header">
@@ -29,8 +31,9 @@
 
       <nav class="site-nav" id="site-nav">
         <a href="index.html#shop">Shop</a>
+        <a href="index.html#perche-noi">Perché noi</a>
         <a href="index.html#chi-siamo">Chi siamo</a>
-        <a href="index.html#pagamenti">Pagamenti</a>
+        <a href="index.html#faq">FAQ</a>
         <a href="index.html#contatti">Contatti</a>
       </nav>
 
@@ -47,72 +50,249 @@
   <section class="hero">
     <div class="container hero__inner">
       <div>
-        <p class="hero__kicker">Streetwear · Estate 2026</p>
-        <h1>Il tuo stile,<br /><span class="brush">senza sforzo.</span></h1>
+        <p class="hero__kicker">Nuova collezione · Estate 2026</p>
+        <h1>Vesti bene.<br /><span class="accent">Senza pensarci.</span></h1>
         <p>
-          Completi coordinati, t-shirt oversize e outfit pensati per chi vuole
-          essere a posto in due minuti. Qualità vera, prezzi onesti, spedizione
-          in tutta Italia.
+          Completi coordinati e t-shirt oversize selezionati capo per capo nel
+          nostro negozio. Ordini in due minuti, ricevi a casa in tutta Italia
+          e se non ti convince lo rimandi indietro: semplice.
         </p>
         <div class="hero__cta">
-          <a class="btn btn--gold" href="#shop">Scopri la collezione</a>
-          <a class="btn btn--ghost" href="#chi-siamo">Chi siamo</a>
+          <a class="btn btn--gold" href="#shop">Acquista ora</a>
+          <a class="btn btn--ghost" href="#perche-noi">Perché sceglierci</a>
         </div>
       </div>
-      <div class="hero__imgwrap">
-        <img src="assets/img/set-sand.jpeg" alt="Completo oversize color sabbia" />
+      <div class="hero__media">
+        <div class="hero__imgwrap">
+          <img src="assets/img/set-sand.jpeg" alt="Completo oversize color sabbia" />
+        </div>
+        <div class="hero__tag">
+          Completo Oversize Sand
+          <small>Nuovo arrivo · da 44,90&nbsp;€</small>
+        </div>
       </div>
     </div>
     <div class="container hero__perks">
-      <span>Spedizione gratis sopra i 60&nbsp;€</span>
+      <span>Spedizione tracciata in tutta Italia</span>
       <span>Reso facile entro 14 giorni</span>
       <span>Pagamento anche alla consegna</span>
+      <span>Assistenza su WhatsApp</span>
     </div>
   </section>
+
+  <!-- ================= BARRA FIDUCIA ================= -->
+  <div class="trustbar">
+    <div class="container">
+      <div class="trust-item">
+        <span class="ico">🚚</span>
+        <div><strong>Spedizione tracciata</strong><small>Gratis sopra i 60&nbsp;€</small></div>
+      </div>
+      <div class="trust-item">
+        <span class="ico">↩️</span>
+        <div><strong>Reso in 14 giorni</strong><small>Cambio taglia senza stress</small></div>
+      </div>
+      <div class="trust-item">
+        <span class="ico">🔒</span>
+        <div><strong>Pagamenti sicuri</strong><small>PayPal, bonifico o contrassegno</small></div>
+      </div>
+      <div class="trust-item">
+        <span class="ico">💬</span>
+        <div><strong>Assistenza reale</strong><small>Ti rispondiamo su WhatsApp</small></div>
+      </div>
+    </div>
+  </div>
 
   <!-- ================= SHOP ================= -->
   <section class="section" id="shop">
     <div class="container">
-      <div class="section__head">
+      <div class="section__head reveal">
         <p class="section__kicker">La collezione</p>
         <h2>I nostri completi</h2>
+        <p class="section__sub">
+          Pochi capi, scelti bene. Ogni completo è selezionato e provato in
+          negozio prima di arrivare online.
+        </p>
       </div>
       <div class="grid" id="product-grid"><!-- prodotti generati da JS --></div>
     </div>
   </section>
 
+  <!-- ================= PERCHÉ NOI ================= -->
+  <section class="section why" id="perche-noi">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="section__kicker">Perché sceglierci</p>
+        <h2>Comprare qui è facile</h2>
+      </div>
+      <div class="why__grid">
+        <div class="why-card reveal">
+          <span class="ico">👌</span>
+          <h3>Selezione vera, non catalogo infinito</h3>
+          <p>
+            Niente marketplace anonimo: ogni capo lo abbiamo scelto, toccato e
+            provato noi. Se è qui, è perché lo venderemmo a un amico.
+          </p>
+        </div>
+        <div class="why-card reveal">
+          <span class="ico">📏</span>
+          <h3>Taglia sbagliata? Nessun problema</h3>
+          <p>
+            Hai 14 giorni per cambiare taglia o restituire il capo. Scrivici su
+            WhatsApp e organizziamo tutto noi.
+          </p>
+        </div>
+        <div class="why-card reveal">
+          <span class="ico">💶</span>
+          <h3>Paghi come vuoi tu</h3>
+          <p>
+            PayPal, carta, bonifico o in contanti al corriere con il
+            contrassegno. Nessun pagamento anticipato obbligatorio.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RECENSIONI ================= -->
+  <section class="section" id="recensioni">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="section__kicker">Dicono di noi</p>
+        <h2>Clienti soddisfatti</h2>
+      </div>
+      <!-- NOTA: sostituisci queste recensioni di esempio con recensioni reali dei tuoi clienti -->
+      <div class="reviews__grid">
+        <article class="review-card reveal">
+          <div class="stars" aria-label="5 stelle su 5">★★★★★</div>
+          <p>
+            "Completo total black perfetto, il cotone è bello pesante e la
+            vestibilità oversize è proprio come in foto. Arrivato in due giorni."
+          </p>
+          <footer>
+            <span class="avatar">LC</span>
+            <div><strong>Luca C.</strong><small>Acquisto verificato</small></div>
+          </footer>
+        </article>
+        <article class="review-card reveal">
+          <div class="stars" aria-label="5 stelle su 5">★★★★★</div>
+          <p>
+            "Avevo sbagliato taglia, ho scritto su WhatsApp e me l'hanno
+            cambiata senza discutere. Così si fa. Il completo sand è top."
+          </p>
+          <footer>
+            <span class="avatar">GM</span>
+            <div><strong>Giulia M.</strong><small>Acquisto verificato</small></div>
+          </footer>
+        </article>
+        <article class="review-card reveal">
+          <div class="stars" aria-label="5 stelle su 5">★★★★★</div>
+          <p>
+            "Ho pagato alla consegna, zero pensieri. Qualità che in giro a
+            questo prezzo non trovi, sembra roba da negozio molto più caro."
+          </p>
+          <footer>
+            <span class="avatar">AD</span>
+            <div><strong>Andrea D.</strong><small>Acquisto verificato</small></div>
+          </footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= CHI SIAMO ================= -->
-  <section class="section" id="chi-siamo" style="background:#fff;">
+  <section class="section why" id="chi-siamo">
     <div class="container about">
-      <div class="about__imgwrap">
+      <div class="about__imgwrap reveal">
         <img src="assets/img/store-card.jpeg" alt="Il biglietto da visita di 16 Santiago Store nel nostro negozio" />
       </div>
-      <div>
+      <div class="reveal">
         <p class="section__kicker">Chi siamo</p>
-        <h2>Nati in negozio,<br />cresciuti online.</h2>
+        <h2>Nati in negozio, cresciuti online</h2>
         <p>
           16 Santiago Store nasce come negozio fisico di abbigliamento street e
           casual. Ogni capo che vedi qui è lo stesso che trovi appeso alle
           nostre grucce: lo scegliamo, lo tocchiamo e lo proviamo prima di
           proportelo.
         </p>
-        <p>
-          Ora portiamo la stessa selezione direttamente a casa tua, con
-          spedizioni rapide in tutta Italia e la possibilità di pagare come
-          preferisci — anche alla consegna.
-        </p>
+        <ul class="about__points">
+          <li>Negozio fisico reale, non solo un sito</li>
+          <li>Capi provati e fotografati dal vivo</li>
+          <li>Assistenza diretta, senza call center</li>
+        </ul>
         <a class="btn btn--dark" href="#shop">Vai allo shop</a>
       </div>
     </div>
   </section>
 
-  <!-- ================= PAGAMENTI ================= -->
-  <section class="payments-strip" id="pagamenti">
+  <!-- ================= FAQ ================= -->
+  <section class="section" id="faq">
     <div class="container">
-      <span><span class="ico">💳</span> PayPal</span>
-      <span><span class="ico">🏦</span> Bonifico bancario</span>
-      <span><span class="ico">📦</span> Contrassegno alla consegna</span>
-      <span><span class="ico">💬</span> Ordine assistito su WhatsApp</span>
+      <div class="section__head reveal">
+        <p class="section__kicker">Domande frequenti</p>
+        <h2>Tutto chiaro prima di ordinare</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>Che taglia mi consigliate?</summary>
+          <p>
+            I nostri completi hanno vestibilità oversize: se ti piace il fit
+            comodo prendi la tua taglia abituale, se lo preferisci più
+            aderente scendi di una. Nel dubbio scrivici su WhatsApp con
+            altezza e peso: ti consigliamo noi.
+          </p>
+        </details>
+        <details>
+          <summary>Quanto ci mette ad arrivare l'ordine?</summary>
+          <p>
+            Prepariamo il pacco entro 24 ore lavorative dalla conferma e la
+            spedizione tracciata impiega in genere 24–48 ore in tutta Italia.
+            Ricevi il codice di tracciamento su WhatsApp.
+          </p>
+        </details>
+        <details>
+          <summary>Come funziona il reso o il cambio taglia?</summary>
+          <p>
+            Hai 14 giorni dalla consegna: scrivici su WhatsApp, ci accordiamo
+            sul cambio o sul rimborso e rispedisci il capo integro con
+            l'etichetta. Semplice e senza moduli complicati.
+          </p>
+        </details>
+        <details>
+          <summary>Come posso pagare?</summary>
+          <p>
+            Con PayPal o carta, con bonifico bancario, oppure in contanti alla
+            consegna con il contrassegno (+3&nbsp;€). Scegli il metodo al
+            checkout.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BANNER WHATSAPP ================= -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="wa-banner reveal">
+        <div>
+          <h3>Dubbi sulla taglia o sul capo?</h3>
+          <p>
+            Scrivici su WhatsApp: ti rispondiamo noi del negozio, con foto e
+            misure reali dei capi. Nessun bot, nessuna attesa infinita.
+          </p>
+        </div>
+        <a class="btn btn--gold" id="wa-contact" href="#" target="_blank" rel="noopener">💬 Scrivici su WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PAGAMENTI ================= -->
+  <section class="payments-strip" id="pagamenti" aria-label="Metodi di pagamento accettati">
+    <div class="container">
+      <span class="pay-pill"><span class="ico">💳</span> PayPal</span>
+      <span class="pay-pill"><span class="ico">💳</span> Carta di credito</span>
+      <span class="pay-pill"><span class="ico">🏦</span> Bonifico bancario</span>
+      <span class="pay-pill"><span class="ico">📦</span> Contrassegno</span>
+      <span class="pay-pill"><span class="ico">🔒</span> Checkout sicuro</span>
     </div>
   </section>
 
@@ -129,6 +309,7 @@
           <ul>
             <li><a href="index.html#shop">Shop</a></li>
             <li><a href="index.html#chi-siamo">Chi siamo</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
             <li><a href="checkout.html">Carrello e checkout</a></li>
           </ul>
         </div>
@@ -172,6 +353,11 @@
         </div>
         <p class="form-error" id="pm-error" hidden>Seleziona una taglia prima di aggiungere al carrello.</p>
         <button class="btn btn--gold btn--block" type="button" id="pm-add">Aggiungi al carrello</button>
+        <div class="modal__trust">
+          <span>Spedizione 24/48h</span>
+          <span>Reso 14 giorni</span>
+          <span>Paghi anche alla consegna</span>
+        </div>
       </div>
     </div>
   </div>
@@ -186,11 +372,13 @@
       </div>
       <div class="drawer__items" id="cart-items"></div>
       <div class="drawer__foot">
+        <p class="free-ship-note" id="ship-note">Spedizione gratuita per ordini sopra i 60&nbsp;€</p>
+        <div class="ship-progress"><span id="ship-progress-bar" style="width:0%"></span></div>
         <div class="totrow"><span>Subtotale</span><span id="cart-subtotal">€ 0,00</span></div>
         <div class="totrow"><span>Spedizione</span><span id="cart-shipping">—</span></div>
         <div class="totrow totrow--big"><span>Totale</span><span id="cart-total">€ 0,00</span></div>
-        <p class="free-ship-note">Spedizione gratuita per ordini sopra i 60&nbsp;€</p>
-        <a class="btn btn--gold btn--block" href="checkout.html" id="cart-checkout-btn">Vai al checkout</a>
+        <a class="btn btn--gold btn--block" href="checkout.html" id="cart-checkout-btn">Concludi l'ordine</a>
+        <p class="secure-note">🔒 Checkout sicuro · Reso facile 14 giorni</p>
       </div>
     </aside>
   </div>

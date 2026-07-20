@@ -35,6 +35,12 @@ con i tuoi dati reali:
 Finché non li aggiorni, il sito usa dei segnaposto (numero `390000000000`, IBAN
 di esempio, ecc.).
 
+## ⭐ Recensioni
+
+La sezione "Clienti soddisfatti" in `index.html` contiene **recensioni di
+esempio**: sostituiscile con recensioni reali dei tuoi clienti appena le hai
+(per legge non si possono pubblicare recensioni inventate come se fossero vere).
+
 ## 🛍️ Gestire i prodotti
 
 Apri `assets/js/products.js`: ogni prodotto è un oggetto con nome, prezzo,
