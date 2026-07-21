@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>16 Santiago Store — DROP 01 · Streetwear</title>
+  <meta name="description" content="16 Santiago Store · Drop 01. Completi streetwear selezionati capo per capo. Trascina il rail, scegli il tuo capo, ordina. Spedizione in tutta Italia, paghi anche alla consegna." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>🧥</text></svg>" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>◆ DROP 01 · ESTATE 2026</span><span>◆ SELEZIONATO IN NEGOZIO</span><span>◆ SPEDIZIONE IN TUTTA ITALIA</span><span>◆ PAGHI ANCHE ALLA CONSEGNA</span><span>◆ DROP 01 · ESTATE 2026</span><span>◆ SELEZIONATO IN NEGOZIO</span><span>◆ SPEDIZIONE IN TUTTA ITALIA</span><span>◆ PAGHI ANCHE ALLA CONSEGNA</span>
+    </div>
+  </div>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="index.html" aria-label="16 Santiago Store">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+          <path d="M32 6c-3.5 0-6 2.4-6 5.4 0 2.2 1.4 3.8 3.4 4.6 1.4.6 2.6 1.5 2.6 3v2" />
+          <path d="M32 21 8 36c-1.8 1.1-1 3.9 1.1 3.9h45.8c2.1 0 2.9-2.8 1.1-3.9L32 21Z" />
+        </svg>
+        <span class="brand__text">
+          <span class="brand__num">16</span>
+          <span class="brand__sub">Santiago Store</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html#rail">Il Rail</a>
+        <a href="index.html#manifesto">Manifesto</a>
+        <a href="index.html#negozio">Il Negozio</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+
+      <div style="display:flex;align-items:center;gap:.7rem;">
+        <button class="cart-btn" type="button" data-open-cart>
+          Carrello <span data-cart-count>0</span>
+        </button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <header class="hero" id="top">
+    <div class="wrap">
+      <span class="hero__eyebrow">Drop 01 — Estate 2026</span>
+      <h1 class="hero__title">
+        <span class="l1">Santiago</span>
+        <span class="l2"><span class="outline">Store</span> <span class="hero__mark">16</span></span>
+      </h1>
+      <div class="hero__foot">
+        <p class="hero__lead">
+          Completi che parlano prima di te. <b>Selezionati capo per capo</b>,
+          provati in negozio e appesi alle nostre grucce — non un catalogo
+          infinito, un drop.
+        </p>
+        <div class="hero__cta">
+          <a class="btn" href="#rail">Guarda il drop ↓</a>
+          <a class="btn btn--ghost" id="wa-hero" href="#" target="_blank" rel="noopener">Scrivici su WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="ticker-row">
+      <span><b>04</b> capi nel drop</span>
+      <span><b>Reso</b> 14 giorni</span>
+      <span><b>Free ship</b> &gt; 60€</span>
+      <span><b>PayPal</b> / Bonifico / Contrassegno</span>
+    </div>
+  </div>
+
+  <!-- ================= IL RAIL ================= -->
+  <section class="section" id="rail">
+    <div class="wrap">
+      <div class="rail-head">
+        <h2>Il <em>Rail</em></h2>
+        <span class="rail-hint">Trascina per sfogliare <span class="drag">→</span></span>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="rail-viewport" id="rail-viewport">
+        <div class="rail" id="rail-track"><!-- grucce generate da JS --></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MANIFESTO ================= -->
+  <section class="manifesto wrap" id="manifesto">
+    <p>Non un catalogo.<br />Un <span class="brush">drop</span> firmato&nbsp;16.</p>
+    <small>
+      Ogni capo che vedi qui è lo stesso appeso alle grucce del nostro negozio.
+      Lo scegliamo, lo tocchiamo, lo proviamo. Se è nel drop, è perché lo
+      metteremmo anche noi.
+    </small>
+  </section>
+
+  <!-- ================= RECENSIONI ================= -->
+  <section class="section section--line" id="recensioni">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="section__kicker">Dicono di noi</p>
+        <h2>La <em>strada</em> parla</h2>
+      </div>
+      <!-- NOTA: sostituisci con recensioni reali dei tuoi clienti -->
+      <div class="reviews__grid">
+        <article class="review-card reveal">
+          <div class="stars" aria-label="5 stelle su 5">★★★★★</div>
+          <p>"Total Black perfetto, cotone bello pesante e fit oversize come in foto. Arrivato in due giorni."</p>
+          <footer><span class="avatar">LC</span><div><strong>Luca C.</strong><small>Acquisto verificato</small></div></footer>
+        </article>
+        <article class="review-card reveal">
+          <div class="stars" aria-label="5 stelle su 5">★★★★★</div>
+          <p>"Sbagliata taglia, scritto su WhatsApp, cambiata senza discutere. Così si fa. Il Sand è top."</p>
+          <footer><span class="avatar">GM</span><div><strong>Giulia M.</strong><small>Acquisto verificato</small></div></footer>
+        </article>
+        <article class="review-card reveal">
+          <div class="stars" aria-label="5 stelle su 5">★★★★★</div>
+          <p>"Pagato alla consegna, zero pensieri. Qualità che a questo prezzo in giro non trovi."</p>
+          <footer><span class="avatar">AD</span><div><strong>Andrea D.</strong><small>Acquisto verificato</small></div></footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NEGOZIO ================= -->
+  <section class="section section--line" id="negozio">
+    <div class="wrap">
+      <div class="story">
+        <div class="story__img reveal">
+          <img src="assets/img/store-card.jpeg" alt="Il biglietto da visita di 16 Santiago Store nel nostro negozio" />
+          <span class="stamp">Real store · Real people</span>
+        </div>
+        <div class="reveal">
+          <h3>Nati in negozio,<br />cresciuti su strada</h3>
+          <p>16 Santiago Store è prima di tutto un posto vero, con le grucce, gli specchi e la gente che entra. <b>Non un magazzino anonimo.</b></p>
+          <ul class="story__points">
+            <li>Negozio fisico reale</li>
+            <li>Capi provati e fotografati dal vivo</li>
+            <li>Assistenza diretta, senza call center</li>
+          </ul>
+          <a class="btn btn--rust" href="#rail">Entra nel drop</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="section section--line" id="faq">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <p class="section__kicker">Domande frequenti</p>
+        <h2>Prima di <em>ordinare</em></h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>Che taglia mi consigliate?</summary>
+          <p>Vestibilità oversize: per il fit comodo prendi la tua taglia, per un fit più aderente scendi di una. Nel dubbio scrivici su WhatsApp con altezza e peso.</p>
+        </details>
+        <details>
+          <summary>Quanto ci mette ad arrivare?</summary>
+          <p>Prepariamo il pacco entro 24 ore lavorative dalla conferma; la spedizione tracciata impiega in genere 24–48 ore in tutta Italia.</p>
+        </details>
+        <details>
+          <summary>Reso o cambio taglia?</summary>
+          <p>Hai 14 giorni dalla consegna: scrivici su WhatsApp, ci accordiamo sul cambio o sul rimborso e rispedisci il capo integro con l'etichetta.</p>
+        </details>
+        <details>
+          <summary>Come posso pagare?</summary>
+          <p>PayPal o carta, bonifico bancario, oppure contanti alla consegna con il contrassegno (+3&nbsp;€). Scegli il metodo al checkout.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DROP CTA ================= -->
+  <section class="drop" id="drop">
+    <div class="wrap">
+      <h2>Entra nel <span class="outline">Drop</span></h2>
+      <p>Posti limitati per taglia · finché c'è, c'è</p>
+      <div class="hero__cta">
+        <a class="btn btn--rust" href="#rail">Scegli il tuo capo</a>
+        <a class="btn btn--ghost" id="wa-drop" href="#" target="_blank" rel="noopener">Ordina su WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer" id="contatti">
+    <div class="wrap">
+      <div class="site-footer__grid">
+        <div>
+          <h4>16 Santiago Store</h4>
+          <p>Streetwear e completi coordinati.<br />Selezionati in negozio, spediti in tutta Italia.</p>
+        </div>
+        <div>
+          <h4>Naviga</h4>
+          <ul>
+            <li><a href="index.html#rail">Il Rail</a></li>
+            <li><a href="index.html#negozio">Il Negozio</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="checkout.html">Carrello e checkout</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contatti</h4>
+          <ul>
+            <li>ordini@16santiagostore.it</li>
+            <li>WhatsApp: scrivici dal checkout</li>
+            <li>Italia</li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        © <span data-year></span> 16 Santiago Store — Drop 01 · Tutti i diritti riservati
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL PRODOTTO ================= -->
+  <div class="modal" id="product-modal" role="dialog" aria-modal="true">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__panel">
+      <button class="modal__close" type="button" data-close-modal aria-label="Chiudi">✕</button>
+      <img id="pm-img" src="" alt="" />
+      <div class="modal__info">
+        <span class="modal__cat" id="pm-cat"></span>
+        <h3 class="modal__name" id="pm-name"></h3>
+        <div class="modal__price" id="pm-price"></div>
+        <p class="modal__desc" id="pm-desc"></p>
+        <div>
+          <span class="modal__label">Taglia</span>
+          <div class="sizes" id="pm-sizes" style="margin-top:.45rem;"></div>
+        </div>
+        <div>
+          <span class="modal__label">Quantità</span>
+          <div class="qty-ctrl" style="margin-top:.45rem;">
+            <button type="button" id="pm-minus" aria-label="Diminuisci">−</button>
+            <span id="pm-qty">1</span>
+            <button type="button" id="pm-plus" aria-label="Aumenta">+</button>
+          </div>
+        </div>
+        <p class="form-error" id="pm-error" hidden>Seleziona una taglia prima di aggiungere al carrello.</p>
+        <button class="btn btn--rust btn--block" type="button" id="pm-add">Aggiungi al carrello</button>
+        <div class="modal__trust">
+          <span>Spedizione 24/48h</span>
+          <span>Reso 14 giorni</span>
+          <span>Paghi anche alla consegna</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= DRAWER CARRELLO ================= -->
+  <div class="drawer" id="cart-drawer">
+    <div class="drawer__backdrop" data-close-cart></div>
+    <aside class="drawer__panel" aria-label="Carrello">
+      <div class="drawer__head">
+        <h3>Il tuo carrello</h3>
+        <button class="drawer__close" type="button" data-close-cart aria-label="Chiudi">✕</button>
+      </div>
+      <div class="drawer__items" id="cart-items"></div>
+      <div class="drawer__foot">
+        <p class="free-ship-note" id="ship-note">Spedizione gratuita sopra i 60&nbsp;€</p>
+        <div class="ship-progress"><span id="ship-progress-bar" style="width:0%"></span></div>
+        <div class="totrow"><span>Subtotale</span><span id="cart-subtotal">€ 0,00</span></div>
+        <div class="totrow"><span>Spedizione</span><span id="cart-shipping">—</span></div>
+        <div class="totrow totrow--big"><span>Totale</span><span id="cart-total">€ 0,00</span></div>
+        <a class="btn btn--rust btn--block" href="checkout.html" id="cart-checkout-btn">Concludi l'ordine</a>
+        <p class="secure-note">Checkout sicuro · Reso facile 14 giorni</p>
+      </div>
+    </aside>
+  </div>
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/store.js"></script>
+</body>
+</html>
