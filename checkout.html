@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Checkout — 16 Santiago Store</title>
+  <title>Checkout — 16 Santiago Store · DROP 01</title>
   <meta name="description" content="Completa il tuo ordine su 16 Santiago Store: PayPal, bonifico bancario o contrassegno alla consegna." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>🧥</text></svg>" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-  <div class="announce">Spedizione gratuita sopra i <strong>60&nbsp;€</strong> · Reso facile entro 14 giorni · Paga anche alla consegna</div>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>◆ CHECKOUT SICURO</span><span>◆ SPEDIZIONE IN TUTTA ITALIA</span><span>◆ PAGHI ANCHE ALLA CONSEGNA</span><span>◆ RESO 14 GIORNI</span><span>◆ CHECKOUT SICURO</span><span>◆ SPEDIZIONE IN TUTTA ITALIA</span><span>◆ PAGHI ANCHE ALLA CONSEGNA</span><span>◆ RESO 14 GIORNI</span>
+    </div>
+  </div>
 
   <header class="site-header">
-    <div class="container site-header__inner">
+    <div class="wrap site-header__inner">
       <a class="brand" href="index.html" aria-label="16 Santiago Store">
         <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
           <path d="M32 6c-3.5 0-6 2.4-6 5.4 0 2.2 1.4 3.8 3.4 4.6 1.4.6 2.6 1.5 2.6 3v2" />
@@ -28,27 +29,24 @@
         </span>
       </a>
       <nav class="site-nav" id="site-nav">
-        <a href="index.html#shop">Shop</a>
-        <a href="index.html#chi-siamo">Chi siamo</a>
-        <a href="index.html#contatti">Contatti</a>
+        <a href="index.html#rail">Il Rail</a>
+        <a href="index.html#negozio">Il Negozio</a>
+        <a href="index.html#faq">FAQ</a>
       </nav>
       <div style="display:flex;align-items:center;gap:.7rem;">
-        <a class="cart-btn" href="checkout.html" style="text-decoration:none;">
-          🛒 Carrello <span data-cart-count>0</span>
-        </a>
+        <a class="cart-btn" href="checkout.html">Carrello <span data-cart-count>0</span></a>
         <button class="nav-toggle" id="nav-toggle" aria-label="Menu">☰</button>
       </div>
     </div>
   </header>
 
   <main class="section" style="padding-top:2.5rem;">
-    <div class="container">
+    <div class="wrap">
 
-      <!-- ============ CHECKOUT ============ -->
       <div id="checkout-main">
-        <div class="section__head" style="margin-bottom:0.5rem;">
+        <div class="section__head" style="margin-bottom:.5rem;text-align:center;">
           <p class="section__kicker">Checkout</p>
-          <h2>Completa il tuo ordine</h2>
+          <h2>Chiudi il <em>drop</em></h2>
         </div>
 
         <div class="steps" aria-label="Passaggi del checkout">
@@ -60,7 +58,6 @@
         </div>
 
         <form id="checkout-form" class="checkout-grid" novalidate>
-          <!-- Dati cliente + pagamento -->
           <div class="panel">
             <h2>1 · Dati di spedizione</h2>
             <div class="field">
@@ -101,7 +98,7 @@
             <label class="pay-option">
               <input type="radio" name="payment" value="paypal" checked />
               <span>
-                <strong>💳 PayPal / Carta</strong>
+                <strong>PayPal / Carta</strong>
                 <small>Paga subito in modo sicuro con PayPal o carta di credito/debito.</small>
               </span>
             </label>
@@ -114,7 +111,7 @@
             <label class="pay-option">
               <input type="radio" name="payment" value="bonifico" />
               <span>
-                <strong>🏦 Bonifico bancario</strong>
+                <strong>Bonifico bancario</strong>
                 <small>Spediamo alla ricezione del bonifico (1-2 giorni lavorativi).</small>
               </span>
             </label>
@@ -127,7 +124,7 @@
             <label class="pay-option">
               <input type="radio" name="payment" value="contrassegno" />
               <span>
-                <strong>📦 Contrassegno</strong>
+                <strong>Contrassegno</strong>
                 <small>Paghi in contanti al corriere alla consegna (+ € 3,00).</small>
               </span>
             </label>
@@ -137,49 +134,46 @@
             </div>
           </div>
 
-          <!-- Riepilogo -->
           <div class="panel panel--sticky">
             <h2>Riepilogo ordine</h2>
             <div id="checkout-items" style="display:flex;flex-direction:column;gap:1rem;margin-bottom:1.2rem;"></div>
             <div class="totrow"><span>Subtotale</span><span id="co-subtotal">€ 0,00</span></div>
             <div class="totrow"><span>Spedizione</span><span id="co-shipping">—</span></div>
             <div class="totrow" id="co-cod-row" hidden><span>Supplemento contrassegno</span><span id="co-cod">€ 0,00</span></div>
-            <div class="totrow totrow--big" style="margin-top:.4rem;"><span>Totale</span><span id="co-total">€ 0,00</span></div>
-            <button class="btn btn--gold btn--block" type="submit" style="margin-top:1rem;">
+            <div class="totrow totrow--big" style="margin-top:.5rem;"><span>Totale</span><span id="co-total">€ 0,00</span></div>
+            <button class="btn btn--rust btn--block" type="submit" style="margin-top:1rem;">
               Conferma ordine
             </button>
-            <p style="font-size:.8rem;color:var(--ink-soft);margin-top:.7rem;">
+            <p style="font-size:.78rem;color:var(--concrete);margin-top:.7rem;font-family:var(--font-mono);letter-spacing:.03em;">
               Confermando, il riepilogo si aprirà su WhatsApp per l'invio al
-              negozio: è la conferma definitiva dell'ordine. Riceverai risposta
-              con i tempi di spedizione.
+              negozio: è la conferma definitiva dell'ordine.
             </p>
-            <p class="secure-note">🔒 Dati protetti · Reso facile entro 14 giorni</p>
+            <p class="secure-note">Dati protetti · Reso facile 14 giorni</p>
           </div>
         </form>
       </div>
 
-      <!-- ============ CONFERMA ============ -->
       <div class="order-confirm" id="order-confirm" hidden>
         <div class="big">✅</div>
         <h1>Ordine <span id="confirm-id"></span> pronto!</h1>
         <p>
-          Si è aperto WhatsApp con il riepilogo del tuo ordine: <strong>premi
-          invio per confermarlo</strong>. Se WhatsApp non si è aperto, puoi
-          inviarcelo con uno dei pulsanti qui sotto.
+          Si è aperto WhatsApp con il riepilogo del tuo ordine: <b>premi
+          invio per confermarlo</b>. Se WhatsApp non si è aperto, usa uno dei
+          pulsanti qui sotto.
         </p>
-        <p>Ti risponderemo a breve con la conferma e i dettagli di pagamento/spedizione (email di riferimento: <strong id="confirm-email"></strong>).</p>
-        <a class="btn btn--gold" id="confirm-wa" href="#" target="_blank" rel="noopener">Invia su WhatsApp</a>
-        <a class="btn btn--outline" id="confirm-mailto" href="#">Invia via email</a>
+        <p>Ti risponderemo con la conferma e i dettagli di pagamento/spedizione (email di riferimento: <b id="confirm-email"></b>).</p>
+        <a class="btn btn--rust" id="confirm-wa" href="#" target="_blank" rel="noopener">Invia su WhatsApp</a>
+        <a class="btn btn--ghost" id="confirm-mailto" href="#">Invia via email</a>
         <br />
-        <a class="btn btn--dark" href="index.html#shop" style="margin-top:1rem;">Torna allo shop</a>
+        <a class="btn" href="index.html#rail" style="margin-top:1rem;">Torna al rail</a>
       </div>
 
     </div>
   </main>
 
   <footer class="site-footer">
-    <div class="container site-footer__bottom" style="border:0;padding-top:0;">
-      © <span data-year></span> 16 Santiago Store — Tutti i diritti riservati
+    <div class="wrap site-footer__bottom" style="border:0;padding-top:0;">
+      © <span data-year></span> 16 Santiago Store — Drop 01 · Tutti i diritti riservati
     </div>
   </footer>
 

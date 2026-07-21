@@ -110,32 +110,58 @@ function discountPct(p) {
   return p.oldPrice ? Math.round((1 - p.price / p.oldPrice) * 100) : 0;
 }
 
+const HOOK_SVG = `<svg class="hanger__hook" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M32 6c-3.5 0-6 2.4-6 5.4 0 2.2 1.4 3.8 3.4 4.6 1.4.6 2.6 1.5 2.6 3v2"/><path d="M32 21 8 36c-1.8 1.1-1 3.9 1.1 3.9h45.8c2.1 0 2.9-2.8 1.1-3.9L32 21Z"/></svg>`;
+
+// Render del "Rail": ogni prodotto appeso a una gruccia
 function renderProducts() {
-  const grid = document.getElementById("product-grid");
-  if (!grid) return;
-  grid.innerHTML = PRODUCTS.map(
+  const rail = document.getElementById("rail-track");
+  if (!rail) return;
+  rail.innerHTML = PRODUCTS.map(
     (p) => `
-    <article class="card reveal" data-open-product="${p.id}">
-      <div class="card__imgwrap">
-        ${p.badge ? `<span class="card__badge">${p.badge}</span>` : ""}
-        ${discountPct(p) ? `<span class="card__off">−${discountPct(p)}%</span>` : ""}
+    <button class="hanger" type="button" data-open-product="${p.id}" aria-label="${p.name}">
+      ${HOOK_SVG}
+      <div class="hanger__garment">
+        ${discountPct(p) ? `<span class="hanger__off">-${discountPct(p)}%</span>` : ""}
         <img src="${p.img}" alt="${p.name}" loading="lazy" />
       </div>
-      <div class="card__body">
-        <span class="card__cat">${p.category}</span>
-        <h3 class="card__title">${p.name}</h3>
-        <span class="card__sizes">Taglie: ${p.sizes.join(" · ")}</span>
-        <div class="card__price">
+      <div class="hanger__tag">
+        <div class="hanger__name">${p.name}</div>
+        <div class="hanger__price">
           ${p.oldPrice ? `<s>${fmt(p.oldPrice)}</s>` : ""}
-          <strong>${fmt(p.price)}</strong>
+          <b>${fmt(p.price)}</b>
         </div>
-        <button class="btn btn--gold card__btn" type="button">Acquista</button>
       </div>
-    </article>`
+    </button>`
   ).join("");
 
-  grid.querySelectorAll("[data-open-product]").forEach((card) => {
-    card.addEventListener("click", () => openProductModal(card.dataset.openProduct));
+  // Distinzione click vs trascinamento del rail
+  const vp = document.getElementById("rail-viewport");
+  let down = false, moved = false, startX = 0, scrollStart = 0;
+  if (vp) {
+    vp.addEventListener("pointerdown", (e) => {
+      down = true; moved = false; startX = e.clientX; scrollStart = vp.scrollLeft;
+    });
+    vp.addEventListener("pointermove", (e) => {
+      if (!down) return;
+      const dx = e.clientX - startX;
+      if (Math.abs(dx) > 5) { moved = true; vp.classList.add("dragging"); }
+      if (moved) { vp.scrollLeft = scrollStart - dx; e.preventDefault(); }
+    });
+    const endDrag = () => { down = false; vp.classList.remove("dragging"); };
+    vp.addEventListener("pointerup", endDrag);
+    vp.addEventListener("pointercancel", endDrag);
+    vp.addEventListener("pointerleave", endDrag);
+    vp.addEventListener(
+      "wheel",
+      (e) => { if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) vp.scrollLeft += e.deltaY; },
+      { passive: true }
+    );
+  }
+
+  rail.querySelectorAll("[data-open-product]").forEach((hanger) => {
+    hanger.addEventListener("click", () => {
+      if (!moved) openProductModal(hanger.dataset.openProduct);
+    });
   });
 }
 
@@ -155,7 +181,7 @@ function openProductModal(id) {
   document.getElementById("pm-desc").textContent = p.description;
   document.getElementById("pm-price").innerHTML = `${
     p.oldPrice ? `<s>${fmt(p.oldPrice)}</s> ` : ""
-  }<strong>${fmt(p.price)}</strong>`;
+  }<b>${fmt(p.price)}</b>`;
   document.getElementById("pm-qty").textContent = "1";
   document.getElementById("pm-error").hidden = true;
 
@@ -435,13 +461,14 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 
-  // Pulsante contatto WhatsApp
-  const waContact = document.getElementById("wa-contact");
-  if (waContact) {
-    waContact.href = `https://wa.me/${STORE_CONFIG.whatsappNumber}?text=${encodeURIComponent(
-      "Ciao! Ho una domanda su un capo di 16 Santiago Store."
-    )}`;
-  }
+  // Pulsanti contatto WhatsApp
+  const waHref = `https://wa.me/${STORE_CONFIG.whatsappNumber}?text=${encodeURIComponent(
+    "Ciao 16 Santiago Store! Ho visto il Drop 01, mi dai info?"
+  )}`;
+  ["wa-hero", "wa-drop", "wa-contact"].forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) el.href = waHref;
+  });
 
   // Animazioni reveal allo scroll
   const revealEls = document.querySelectorAll(".reveal");
